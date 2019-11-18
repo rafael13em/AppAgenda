@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane fx:id="rootAgendaView" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appagenda.AgendaViewController">
+   <children>
+      <VBox prefHeight="500.0" prefWidth="500.0" spacing="10.0">
+         <children>
+            <FlowPane hgap="10.0" prefHeight="32.0" prefWidth="480.0">
+               <children>
+                  <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#onActionButtonNuevo" text="Nuevo" />
+                  <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#onActionEditar" text="Editar" />
+                  <Button fx:id="btnSuprimir" mnemonicParsing="false" onAction="#onActionButtonSuprimir" text="Suprimir" />
+               </children>
+            </FlowPane>
+            <TableView id="tableview1" fx:id="tableview1" prefHeight="311.0" prefWidth="500.0">
+              <columns>
+                <TableColumn id="nombre" fx:id="nombre" prefWidth="96.0" text="Nombre" />
+                <TableColumn id="apellido" fx:id="apellido" prefWidth="130.0" text="Apellidos" />
+                  <TableColumn id="email" fx:id="email" prefWidth="134.0" text="E-mail" />
+                  <TableColumn fx:id="provincia" prefWidth="139.0" text="Provincia" />
+              </columns>
+            </TableView>
+            <GridPane hgap="10.0" prefHeight="201.0" prefWidth="500.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="53.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="0.0" prefWidth="354.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Nombre" GridPane.halignment="RIGHT" />
+                  <Label text="Apellidos" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtNombre" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtApellido" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#onActionButtonGuardar" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
